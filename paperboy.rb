@@ -6,16 +6,7 @@ class Paperboy
     @experience = 0
     @earnings = 0
   end
-  #
-  # def side
-  #   i = (101...220)
-  #   if i  = i%2 == 0
-  #     return "even"
-  #   else
-  #     i = i%2 == 1
-  #     return "odd"
-  #   end
-  # end
+
 
 def quota
   return @experience/2 + 50
@@ -40,6 +31,21 @@ end
 
   def deliver (start_address, end_address)
     @experience = num_of_house_deliver( start_address, end_address)
+
+
+  if num_of_house_deliver( start_address, end_address) == 50
+    total = num_of_house_deliver( start_address, end_address) * 0.25
+    puts "if"
+  elsif num_of_house_deliver( start_address, end_address) < 50
+    total = num_of_house_deliver( start_address, end_address) - 2
+    puts @earnings
+  elsif num_of_house_deliver( start_address, end_address) > 50
+    total = num_of_house_deliver( start_address, end_address) * 0.50
+    puts "elsif2"
+  end
+
+  @earnings = total
+
   end
 
   def report
